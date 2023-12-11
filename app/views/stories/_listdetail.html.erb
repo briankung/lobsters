@@ -182,11 +182,12 @@ class="story <%= story.current_upvoted? ? "upvoted" : "" %>
           <span class="comments_label">
             <span> | </span>
             <a role="heading" aria-level="2" href="<%= story.comments_path %>">
-            <% if story.comments_count == 0 %>
-              no comments</a>
-            <% else %>
-              <%= story.comments_count %> <%= 'comment'.pluralize(story.comments_count) %></a>
-            <% end %>
+              <% if story.comments_count == 0 %>
+                no comments
+              <% else %>
+                <%= story.comments_count %> <%= 'comment'.pluralize(story.comments_count) %>
+              <% end %>
+            </a>
           </span>
         <% end %>
 
