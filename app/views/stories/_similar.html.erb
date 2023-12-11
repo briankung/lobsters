@@ -4,7 +4,9 @@
       <a href="<%= story.url %>" target="_blank"><%= story.title %></a>
       <%= story.user_is_author? ? "authored by" : "via" %>
       <%= styled_user_link story.user, story %>
-      <%= time_ago_in_words_label(story.created_at) %>
+      <a href="<%= story.comments_path %>">
+        <%= time_ago_in_words_label(story.created_at) %>
+      </a>
       <span>
         |
         <%= story.show_score_to_user?(@user) ? "#{story.score} point".pluralize(story.score) : '~' %>

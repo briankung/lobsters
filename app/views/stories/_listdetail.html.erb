@@ -124,7 +124,9 @@ class="story <%= story.current_upvoted? ? "upvoted" : "" %>
         <% end %>
         <%= styled_user_link story.user, story, class: ['u-author', 'h-card'] %>
 
-        <%= time_ago_in_words_label(story.created_at) %>
+        <a href="<%= story.comments_path %>">
+          <%= time_ago_in_words_label(story.created_at) %>
+        </a>
 
         <% if story.is_editable_by_user?(@user) %>
           <span> | </span>
